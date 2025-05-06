@@ -1,0 +1,374 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://freestock.ai/wp-content/uploads/edd/2024/07/Blurry-Cell-Phone-Photo-HD-Neon-and-Light-Wallpapers-Abstract-Textures-and-Cool-Tumblr-Backgrounds-Large.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333333;
+    padding: 20px;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Overlay to darken the background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 20px;
+    color: white;
+}
+
+nav h1 {
+    font-size: 1.5em;
+    color: white;
+    font-family: 'Dancing Script', cursive; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #cce0ff;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4a90e2;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Section Styling */
+section {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+section:hover {
+    transform: scale(1.02); 
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+/* Hide default file input */
+input[type="file"] {
+    display: none; 
+}
+
+/* Custom File Upload Button */
+label[for="imageUpload"],
+label[for="contributeUpload"] {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+label[for="imageUpload"]:hover,
+label[for="contributeUpload"]:hover {
+    background-color: #357abd;
+}
+
+/* File Name Display */
+.file-name {
+    margin-left: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+}
+
+/* Clear (❌) icon styling */
+.clear-icon {
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: red;
+    transition: color 0.3s ease;
+    display: inline;
+}
+
+.clear-icon:hover {
+    color: darkred;
+}
+
+/* Buttons */
+button {
+    display: block; 
+    width: 100%; 
+    margin-top: 10px; 
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+/* Ensure the search results text is readable */
+#resultsContainer {
+    color: white; 
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border-radius: 8px;
+}
+
+footer p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer .cursive {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header, section, footer {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+}
+
+/* Navigation Bar */
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-container {
+    position: relative; 
+    display: inline-block; 
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 150px;
+    z-index: 1000;
+    min-width: 120px;
+    max-width: 200px;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .profile-dropdown {
+        left: auto;
+        right: 0;
+        transform: none;
+    }
+}
+
+
+.profile-dropdown a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 0.9em;
+}
+
+.profile-dropdown a:hover {
+    color: #4a90e2;
+}
+
+.profile-container.active .profile-dropdown {
+    display: block;
+}
+
+/* Account Page Styling */
+.account-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.account-container h2 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.account-info {
+    margin-bottom: 20px;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.history-list li {
+    background: #222;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #cce0ff;
+}
+
+nav h1 {
+    font-size: 1.5em; 
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+}
+
+nav h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav h1 a:hover {
+    text-decoration: underline;
+}
+
+/* Style for labels */
+label[for="item-select"],
+label[for="color-select"] {
+    color: white;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Dropdown styling */
+select#item-select,
+select#color-select {
+    background-color: #222;
+    color: white;
+    font-weight: 600;
+    border: 2px solid #4a90e2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    appearance: none; /* Removes OS default styling */
+    cursor: pointer;
+}
+
+/* Optional: style the arrow for dropdown (Chrome only) */
+select#item-select:focus,
+select#color-select:focus {
+    outline: none;
+    border-color: #357abd;
+}
+
+
+

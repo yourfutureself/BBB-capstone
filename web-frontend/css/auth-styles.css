@@ -1,0 +1,137 @@
+ /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #121212 url('https://freestock.ai/wp-content/uploads/edd/2024/07/Blurry-Cell-Phone-Photo-HD-Neon-and-Light-Wallpapers-Abstract-Textures-and-Cool-Tumblr-Backgrounds-Large.jpeg') no-repeat center center/cover;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Overlay to Darken Background */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Authentication Form Container */
+.auth-container {
+    width: 350px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Titles */
+.auth-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #4a90e2;
+}
+
+/* Input Fields */
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #4a90e2;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    font-size: 1em;
+}
+
+/* Placeholder Styling */
+.auth-container input::placeholder {
+    color: #aaa;
+}
+
+/* Password Visibility Toggle */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #aaa;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: white;
+}
+
+/* Buttons */
+.auth-container button {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.auth-container button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+/* Link Styling */
+.auth-container p {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.auth-container a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .auth-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
