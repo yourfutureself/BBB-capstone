@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search & Contribution</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 150px;
+            z-index: 1000;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .profile-container.active .profile-dropdown {
+            display: block;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Bartholomew Binkleburg</h1>
+        <ul>
+            <li class="profile-container">
+                <a href="#" id="profile-link">Profile</a>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <a href="account.html">Account</a>
+                    <a href="#" id="logout">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Image Search & Contribution Platform</h1>
+        <p>Upload an image to find similar products or contribute to our dataset.</p>
+    </header>
+
+    <!-- Image Upload Section -->
+    <section id="image-search">
+        <h2>Upload an Image to Search</h2>
+        <input type="file" id="imageUpload" accept="image/*" hidden>
+        <label for="imageUpload" id="customFileButton">Choose File</label>
+        <span id="imageFileName" class="file-name">No file chosen</span>
+        <span id="clearImage" class="clear-icon" style="display: none;">❌</span>
+        <br>
+        <button id="searchButton">Search</button>
+    </section>
+
+
+    <section id="search-options">
+        <h2>Search by Item and Color</h2>
+        
+        <label for="item-select">Item Type:</label>
+        <select id="item-select">
+            <option value="">-- Choose an item --</option>
+            <option value="accessories">Accessories</option>
+            <option value="bag">Bag</option>
+            <option value="belt">Belt</option>
+            <option value="blazer">Blazer</option>
+            <option value="cardigan">Cardigan</option>
+            <option value="coat">Coat</option>
+            <option value="flats">Flats</option>
+            <option value="hair">Hair</option>
+            <option value="hoodie">Hoodie</option>
+            <option value="jeans">Jeans</option>
+            <option value="loafers">Loafers</option>
+            <option value="necklace">Necklace</option>
+            <option value="pants">Pants</option>
+            <option value="ring">Ring</option>
+            <option value="romper">Romper</option>
+            <option value="scarf">Scarf</option>
+            <option value="shoes">Shoes</option>
+            <option value="skin">Skin</option>
+            <option value="skirt">Skirt</option>
+            <option value="sneakers">Sneakers</option>
+            <option value="stockings">Stockings</option>
+            <option value="sunglasses">Sunglasses</option>
+            <option value="sweatshirt">Sweatshirt</option>
+          </select>
+      
+        <label for="color-select">Color:</label>
+        <select id="color-select">
+          <option value="">-- Choose a color --</option>
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="brown">Brown</option>
+          <option value="purple">Purple</option>
+          <option value="pink">Pink</option>
+          <option value="gray">Gray</option>
+        </select>
+      
+        <button id="searchByColorButton">Search by Color</button>
+      </section>
+      
+
+
+    <!-- Search Results Section -->
+    <section id="search-results">
+        <h2>Matching Items</h2>
+        <div id="resultsContainer">Results will appear here.</div>
+    </section>
+
+    <!-- Contribute Section -->
+    <section id="contribute-section">
+        <h2>Help Improve Our Dataset</h2>
+        <input type="file" id="contributeUpload" accept="image/*" hidden>
+        <label for="contributeUpload" id="customContributeButton">Choose File</label>
+        <span id="contributeFileName" class="file-name">No file chosen</span>
+        <span id="clearContribute" class="clear-icon" style="display: none;">❌</span>
+        <br>
+        <button id="contributeButton">Submit to Dataset</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 <span class="cursive">Bartholomew Binkleburg</span>. All rights reserved.</p>
+    </footer>
+
+    <script src="js/scripts-index.js"></script>
+</body>
+</html>

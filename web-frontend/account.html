@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1><a href="index.html" class="home-link">Bartholomew Binkleburg</a></h1>
+        <ul>
+            <li class="profile-container">
+                <a href="#" id="profile-link">Profile</a>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <a href="account.html">Account</a>
+                    <a href="#" id="logout">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <div class="account-container">
+        <h2>My Account</h2>
+        <div class="account-info">
+            <p><strong>Username:</strong> <span id="username-display">Loading...</span></p>
+        </div>
+
+        <h2>Search History</h2>
+        <ul class="history-list" id="history-list">
+            <li>Loading history...</li>
+        </ul>
+    </div>
+
+    <script src="js/scripts-account.js"></script>
+</body>
+</html>
